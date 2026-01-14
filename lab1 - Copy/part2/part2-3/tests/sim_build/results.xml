@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1768374457" />
+    <testcase name="dff_sync_reset_test" classname="dff_sync_reset_test" file="C:\Users\fangj\Documents\hardware_lab\lab1\part2\part2-3\tests\dff_sync_reset_test.py" lineno="10" time="0.006045818328857422" sim_time_ns="130.0" ratio_time="21502.465494124142" />
+  </testsuite>
+</testsuites>
