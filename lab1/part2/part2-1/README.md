@@ -30,7 +30,7 @@
 
 จากรูป (XNOR ก่อน แล้วเอาไป XOR กับ in3)
 สามารถอธิบายเป็น ASCII ได้ดังนี้
-```
+```lua
 
    in1 ----\
             XNOR ----\
@@ -41,14 +41,14 @@
 
 หรือเขียนเป็นขั้นตอนของสัญญาณ
 
-```
+```ini
 step1 = in1 XNOR in2
 step2 = step1 XOR in3
 ```
 
 ## 3️⃣ อธิบายโค้ดที่ต้องทำ (หัวใจของโจทย์)
 
-```
+```verilog
 assign out = ~(in1 ^ in2) ^ in3;
 ```
 
@@ -87,13 +87,13 @@ assign out = ~(in1 ^ in2) ^ in3;
 
 เขียนเป็นลำดับความคิดได้ว่า
 
-```
+```verilog
 temp = ~(in1 ^ in2);  // XNOR
 out  = temp ^ in3;   // XOR
 ```
 
 ## 4️⃣ โค้ดสมบูรณ์ของโมดูล
-```
+```verilog
 module xnor_xor (
     input  wire in1,
     input  wire in2,
