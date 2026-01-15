@@ -1,7 +1,7 @@
 ## Problem 4: JK flip-flop
 
 ## 1️⃣ Basic Syntax: Module / input / output / reg
-ริ่มจากโครงสร้างพื้นฐานของ Verilog module
+เริ่มจากโครงสร้างพื้นฐานของ Verilog module
 
 ```verilog
 module jkff (
@@ -154,4 +154,5 @@ case ({J, K})
 
 👉 ใช้ `<=` (non-blocking assignment)
 เพราะเป็น **Sequential Logic**
+
 
