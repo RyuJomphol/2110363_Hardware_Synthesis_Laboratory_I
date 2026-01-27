@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1768974800" />
+    <testcase name="bcd_counter_test" classname="bcd_counter_test" file="C:\Users\fangj\Downloads\lab2-main\lab2-main\part1\problem-2\tests\bcd_counter_test.py" lineno="10" time="0.006013631820678711" sim_time_ns="120.0" ratio_time="19954.663600681917" />
+  </testsuite>
+</testsuites>

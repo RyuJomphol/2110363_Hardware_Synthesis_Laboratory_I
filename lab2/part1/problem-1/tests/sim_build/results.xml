@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1768974286" />
+    <testcase name="moore_fsm_test_1" classname="moore_fsm_test" file="C:\Users\fangj\Downloads\lab2-main\lab2-main\part1\problem-1\tests\moore_fsm_test.py" lineno="18" time="0.007066488265991211" sim_time_ns="120.0" ratio_time="16981.56078140288" />
+    <testcase name="moore_fsm_test_2" classname="moore_fsm_test" file="C:\Users\fangj\Downloads\lab2-main\lab2-main\part1\problem-1\tests\moore_fsm_test.py" lineno="50" time="0.0009925365447998047" sim_time_ns="100.0" ratio_time="100751.95772279605" />
+  </testsuite>
+</testsuites>

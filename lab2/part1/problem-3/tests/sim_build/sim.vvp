@@ -1,0 +1,90 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2009.vpi";
+S_000001ff625fbdf0 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_000001ff625fd5f0 .scope module, "debouncer" "debouncer" 3 1;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst";
+    .port_info 2 /INPUT 1 "data_in";
+    .port_info 3 /OUTPUT 1 "data_out";
+P_000001ff625fd780 .param/l "COUNTER_WIDTH" 0 3 3, +C4<00000000000000000000000000000011>;
+P_000001ff625fd7b8 .param/l "SAMPLING_RATE" 0 3 2, +C4<00000000000000000000000000000101>;
+v000001ff625fd990_0 .var "c", 2 0;
+o000001ff62506fc8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001ff624d2d80_0 .net "clk", 0 0, o000001ff62506fc8;  0 drivers
+o000001ff62506ff8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001ff624f6280_0 .net "data_in", 0 0, o000001ff62506ff8;  0 drivers
+v000001ff624f6320_0 .var "data_out", 0 0;
+o000001ff62507058 .functor BUFZ 1, C4<z>; HiZ drive
+v000001ff624f63c0_0 .net "rst", 0 0, o000001ff62507058;  0 drivers
+E_000001ff625061f0 .event posedge, v000001ff624d2d80_0;
+S_000001ff625fd800 .scope module, "cocotb_iverilog_dump" "cocotb_iverilog_dump" 4 1;
+ .timescale -9 -12;
+S_000001ff6254e030 .scope begin, "$unm_blk_6" "$unm_blk_6" 4 2, 4 2 0, S_000001ff625fd800;
+ .timescale -9 -12;
+v000001ff624f6460_0 .var/str "dumpfile_path";
+    .scope S_000001ff625fd5f0;
+T_0 ;
+    %wait E_000001ff625061f0;
+    %load/vec4 v000001ff624f63c0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v000001ff625fd990_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001ff624f6320_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v000001ff625fd990_0;
+    %pad/u 32;
+    %cmpi/e 4, 0, 32;
+    %jmp/0xz  T_0.2, 4;
+    %load/vec4 v000001ff624f6280_0;
+    %assign/vec4 v000001ff624f6320_0, 0;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v000001ff625fd990_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v000001ff625fd990_0;
+    %addi 1, 0, 3;
+    %assign/vec4 v000001ff625fd990_0, 0;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001ff625fd800;
+T_1 ;
+    %fork t_1, S_000001ff6254e030;
+    %jmp t_0;
+    .scope S_000001ff6254e030;
+t_1 ;
+    %vpi_func 4 3 "$value$plusargs" 32, "dumpfile_path=%s", v000001ff624f6460_0 {0 0 0};
+    %cmpi/ne 0, 0, 32;
+    %jmp/0xz  T_1.0, 4;
+    %vpi_call/w 4 4 "$dumpfile", v000001ff624f6460_0 {0 0 0};
+    %jmp T_1.1;
+T_1.0 ;
+    %vpi_call/w 4 6 "$dumpfile", "C:\134Users\134fangj\134Downloads\134lab2-main\134lab2-main\134part1\134problem-3\134tests\134sim_build\134debouncer.fst" {0 0 0};
+T_1.1 ;
+    %vpi_call/w 4 8 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001ff625fd5f0 {0 0 0};
+    %end;
+    .scope S_000001ff625fd800;
+t_0 %join;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "C:\Users\fangj\Downloads\lab2-main\lab2-main\part1\problem-3\debouncer.v";
+    "C:\Users\fangj\Downloads\lab2-main\lab2-main\part1\problem-3\tests\sim_build\cocotb_iverilog_dump.v";
