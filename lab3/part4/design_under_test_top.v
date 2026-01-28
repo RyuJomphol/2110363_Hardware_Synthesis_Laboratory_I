@@ -31,9 +31,12 @@ module design_under_test_top (
     wire       data_valid;
 
     // TODO [Step 3.C]: Instantiate VIO
-
-
-
+    vio_data_generator_conf vio_inst (
+    .clk       (clk),
+    .probe_out0(start),
+    .probe_out1(rst),
+    .probe_out2(data_length)
+    );
     // ----------------------------------
 
     data_generator dut_inst (
@@ -46,11 +49,11 @@ module design_under_test_top (
     );
 
     // TODO [Step 2.D]: Instantiate ILA
-
-
-
-
-
+    ila_data_out ila_inst (
+    .clk   (clk),
+    .probe0(data_out),
+    .probe1(data_valid)
+    );
     // ----------------------------------
 
 endmodule
