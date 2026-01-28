@@ -9,7 +9,6 @@ module fsm_tb ();
 
     // TODO: instantiate the DUT and write the testbench logic
 
-    // DUT
     fsm dut (
         .clk     (clk),
         .rst     (reset),
@@ -17,13 +16,11 @@ module fsm_tb ();
         .data_out(data_out)
     );
 
-    // Clock: 10ns period
     initial begin
         clk = 0;
         forever #5 clk = ~clk;
     end
 
-    // Apply input for 1 clock cycle
     task apply;
         input din;
         begin
@@ -33,11 +30,9 @@ module fsm_tb ();
     endtask
 
     initial begin
-        // init
         reset  = 0;
         data_in = 0;
 
-        // synchronous reset
         reset = 1;
         @(posedge clk); #1;
         reset = 0;
