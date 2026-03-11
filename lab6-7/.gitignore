@@ -1,0 +1,10 @@
+*_sol.v
+*_solution.v
+
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.aux
+
+sim_build/

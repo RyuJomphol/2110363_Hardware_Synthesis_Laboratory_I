@@ -30,6 +30,8 @@ module skilltest1_sol1 (
 
     // Single Logic Block to prevent multi-driver issues
     always @(posedge Clk) begin
+        // 1. Reset behavior is correct 10 %
+
         if (Reset) begin
             // *** Reset Condition: Highest Priority ***
             currentBCD      <= 16'd1;
@@ -50,6 +52,8 @@ module skilltest1_sol1 (
             // *** Normal Operation ***
 
             // 1. Update Outputs based on currentBCD (Pipeline behavior)
+            // 6.Module correctly handles overflow 15%
+
             if (overflow) begin
                 currentBCD0 <= 4'b1111;
                 currentBCD1 <= 4'b1111;
@@ -71,6 +75,11 @@ module skilltest1_sol1 (
                     counter         <= 1;
 
                     // --- Action Logic (Moved here to happen on trigger detection) ---
+                    //2. Trigger[0] functions correctly 15 %
+                    //3. Trigger[1] functions correctly 15 %
+                    //4. Trigger[2] functions correctly 15 %
+                    //5. Trigger[3] functions correctly 15 %
+
                     if (!overflow) begin
                         case (Trigger)
                             4'b0001: begin // +1
@@ -94,6 +103,9 @@ module skilltest1_sol1 (
                     // -----------------------------------------------------------
                 end
             end
+
+            //7. Module handles continuous trigger signals 10%
+            //8.Module handles button noise correctly 5%
             else begin
                 // Debounce Wait State
                 if (counter < 1023) begin
