@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1774425456" />
+    <testcase name="test_data_generator_reset" classname="tb" file="C:\Users\fangj\Documents\hardware_lab\lab8\Part1\tb.py" lineno="12" time="0.003999471664428711" sim_time_ns="110.0" ratio_time="27503.632786885246" />
+    <testcase name="test_data_generator_full" classname="tb" file="C:\Users\fangj\Documents\hardware_lab\lab8\Part1\tb.py" lineno="37" time="1.3255195617675781" sim_time_ns="87890.0" ratio_time="66306.07539491823" />
+  </testsuite>
+</testsuites>

@@ -5,6 +5,29 @@ module branch_control (
     output reg         branch  // Output signal indicating whether to take the branch or not
 );
     // TODO: Implement the branch control
-
+    always @(*) begin
+        branch = 1'b0;
+        case (ops)
+            3'b000: begin
+                if (a == b) branch = 1'b1;
+            end
+            3'b001: begin
+                if (a != b) branch = 1'b1;
+            end
+            3'b100: begin
+                if ($signed(a) < $signed(b)) branch = 1'b1;
+            end
+            3'b101: begin
+                if ($signed(a) >= $signed(b)) branch = 1'b1;
+            end
+            3'b110: begin
+                if (a < b) branch = 1'b1;
+            end
+            3'b111: begin
+                if (a >= b) branch = 1'b1;
+            end
+            default: branch = 1'b0;
+        endcase
+    end
 
 endmodule

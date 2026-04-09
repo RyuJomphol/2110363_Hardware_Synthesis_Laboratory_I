@@ -6,6 +6,6 @@ module adder #(
     output wire [WIDTH-1:0] sum
 );
     // TODO: Implement the adder
-
+    assign sum = a + b;
 
 endmodule

@@ -1,0 +1,32 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2009.vpi";
+S_000001edc16b2df0 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_000001edc16b2f80 .scope module, "prob3" "prob3" 3 1;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "inp";
+    .port_info 3 /OUTPUT 1 "out";
+o000001edc16e6fb8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001edc16b3320_0 .net "clk", 0 0, o000001edc16e6fb8;  0 drivers
+o000001edc16e6fe8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001edc16b3540_0 .net "inp", 0 0, o000001edc16e6fe8;  0 drivers
+o000001edc16e7018 .functor BUFZ 1, C4<z>; HiZ drive
+v000001edc169edc0_0 .net "out", 0 0, o000001edc16e7018;  0 drivers
+o000001edc16e7048 .functor BUFZ 1, C4<z>; HiZ drive
+v000001edc169ee60_0 .net "reset", 0 0, o000001edc16e7048;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "C:/Users/fangj/Documents/hardware_lab/SkilTest2Prep/skilltest2_for_student_cocotb/skilltest2_to_student/P3/cocotb/../prob3.v";

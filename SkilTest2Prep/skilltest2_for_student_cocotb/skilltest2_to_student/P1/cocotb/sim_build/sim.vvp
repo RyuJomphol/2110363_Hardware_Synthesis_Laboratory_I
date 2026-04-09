@@ -1,0 +1,66 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2009.vpi";
+S_0000020eb8912ce0 .scope package, "$unit" "$unit" 2 1;
+ .timescale -9 -12;
+S_0000020eb8912e70 .scope module, "lfsr_16" "lfsr_16" 3 1;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 1 "enable";
+    .port_info 3 /OUTPUT 16 "lfsr_out";
+L_0000020eb8913320 .functor BUFZ 16, v0000020eb89130a0_0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+o0000020eb8946f98 .functor BUFZ 1, C4<z>; HiZ drive
+v0000020eb8913000_0 .net "clk", 0 0, o0000020eb8946f98;  0 drivers
+v0000020eb89130a0_0 .var "current_state", 15 0;
+o0000020eb8946ff8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000020eb8a6b9c0_0 .net "enable", 0 0, o0000020eb8946ff8;  0 drivers
+v0000020eb8a6ba60_0 .net "lfsr_out", 15 0, L_0000020eb8913320;  1 drivers
+o0000020eb8947058 .functor BUFZ 1, C4<z>; HiZ drive
+v0000020eb8a6bb00_0 .net "reset", 0 0, o0000020eb8947058;  0 drivers
+E_0000020eb8a6cbd0 .event posedge, v0000020eb8913000_0;
+    .scope S_0000020eb8912e70;
+T_0 ;
+    %wait E_0000020eb8a6cbd0;
+    %load/vec4 v0000020eb8a6bb00_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 65535, 0, 16;
+    %assign/vec4 v0000020eb89130a0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0000020eb8a6b9c0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v0000020eb89130a0_0;
+    %parti/s 15, 0, 2;
+    %load/vec4 v0000020eb89130a0_0;
+    %parti/s 1, 3, 3;
+    %load/vec4 v0000020eb89130a0_0;
+    %parti/s 1, 12, 5;
+    %xor;
+    %load/vec4 v0000020eb89130a0_0;
+    %parti/s 1, 14, 5;
+    %xor;
+    %load/vec4 v0000020eb89130a0_0;
+    %parti/s 1, 15, 5;
+    %xor;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0000020eb89130a0_0, 0;
+T_0.2 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "C:/Users/fangj/Documents/hardware_lab/SkilTest2Prep/skilltest2_for_student_cocotb/skilltest2_to_student/P1/cocotb/../lfsr_16.v";
